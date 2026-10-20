@@ -13,13 +13,30 @@ public class Main {
         int operaciones = sc.nextInt();
         String operacionActual = sc.nextLine();
 
+        int rechazados = 0;
+
         for(int i = 0; i<= operaciones; i++){
             if(operacionActual.equalsIgnoreCase("retiro")){
                 long monto = sc.nextLong();
                 cuenta1.retirar(monto);
             }
+            else if(operacionActual.equalsIgnoreCase("deposito")){
+                long deposito = sc.nextLong();
+                cuenta1.depositar(deposito);
+
+            }else{
+                rechazados++;
+                cuenta1.setRechazados(rechazados);
+            }
+
+
+
 
         }
+        System.out.println("Saldo: " + cuenta1.getSaldo());
+        System.out.println("Intentos rechazados: " + cuenta1.getRechazados());
+
+
     }
 
 }
