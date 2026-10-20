@@ -1,6 +1,14 @@
 package ni.edu.uam.practicahilos.model;
 
 public class Cuenta {
+    public void setSaldo(long saldo) {
+        this.saldo = saldo;
+    }
+
+    public void setRechazados(int rechazados) {
+        this.rechazados = rechazados;
+    }
+
     private long saldo;
     private int rechazados;
 
